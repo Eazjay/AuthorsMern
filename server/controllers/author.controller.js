@@ -9,7 +9,7 @@ module.exports.createAuthor = (request, response) => {
         .catch(err => response.json(err));
 }
 module.exports.findAuthors = (request, response) => {
-    Author.find({}).sort({name:-1})
+    Author.find({}).sort({name:1})
         .then(authors => response.json({ Authors: authors }))
         .catch(err => response.json({ message: "Something went wrong", error: err }));
 };
